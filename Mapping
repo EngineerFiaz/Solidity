@@ -1,0 +1,14 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >= 0.8.0 < 0.9.0;
+
+contract TrackBalances
+{   mapping(address => uint) balances;
+
+    function transfer(address to, uint amount) external {
+    // subtract the amount from the sender's balance
+    balances[msg.sender] -= amount;
+
+    // add the amount to the recipient's balance
+     balances[to] += amount;
+} 
+}
