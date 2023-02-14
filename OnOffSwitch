@@ -1,0 +1,24 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
+
+contract Switch {
+
+    bool private isOn;
+    constructor ()
+    {
+        isOn = true;
+    }
+
+    function toggle() public returns (bool)
+    {
+        isOn = !isOn;
+
+        return isOn;
+    }
+
+    function get() public view returns (bool)
+    {
+        return isOn;
+    }
+    
+}
